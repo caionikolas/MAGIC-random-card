@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../../services/api";
 import { Container } from "./style";
+import ImgButton from "../../assets/button.png";
 
 export enum LegalityGames {
     LEGAL = "legal",
@@ -17,52 +18,74 @@ export function PlayButton() {
 
     const [card, setCard] = useState();
     const [card2, setCard2] = useState();
+    const [busy, setBusy] = useState(false);
+
 
     const fetch = async () => {
-        const response = await api.get("/cards/random")
+        
+        const response = await api.get("/cards/random",{
+            params: {
+              q: 'legal:historic',
+            }
+          })
+
         const card = response.data
         const types = card.type_line.split(' — ')
 
-        if(card.legalities.historic === LegalityGames.LEGAL 
-            && types[0] !== LegalityTypes.SORCERY 
+        if( types[0] !== LegalityTypes.SORCERY 
             && types[0] !== LegalityTypes.LAND 
             && types[0] !== LegalityTypes.INSTANT ) {
             setCard(card.image_uris.normal)
             fetch2()
+
+            
             return card
         }
 
         fetch()
-        console.log("Fetching another card")
     }
     
     const fetch2 = async () => {
-        const response = await api.get("/cards/random")
+        setBusy(true);
+
+        const response = await api.get("/cards/random",{
+            params: {
+              q: 'legal:historic',
+            }
+          })
+
         const card = response.data
         const types = card.type_line.split(' — ')
 
-        if(card.legalities.historic === LegalityGames.LEGAL 
-            && types[0] !== LegalityTypes.SORCERY 
+        if(types[0] !== LegalityTypes.SORCERY 
             && types[0] !== LegalityTypes.LAND 
             && types[0] !== LegalityTypes.INSTANT ) {
             setCard2(card.image_uris.normal)
+
+            setBusy(false);
             return card
         }
 
         fetch2()
-        console.log("Fetching another card")
     }
 
-    
-    
-    
+        if(busy) {
+            return (
+                <Container>
+                    <div id="Loading">
+                        <span className="icon"></span>
+                    </div>
+                </Container>
+            )    
+        }
+
     return(
         <Container>
-            <img id="primeira" src={card} />
-            <img id="segunda" src={card2} />
+            <img id="First" src={card} />
+            <img id="Second" src={card2} />
             <div>
                 <button type="button" onClick={fetch}>
-                    Play
+                    <img src={ImgButton} />
                 </button>
             </div> 
         </Container>
