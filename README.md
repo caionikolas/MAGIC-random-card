@@ -1,2 +1,2 @@
-# MAGIC THE GATHERING
+# MAGIC
 Diversifying the way to play MTGARENA.
