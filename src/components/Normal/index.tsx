@@ -1,7 +1,6 @@
 import { useState } from "react";
 import api from "../../services/api";
 import { Container } from "./style";
-import ImgButton from "../../assets/button.png";
 
 export enum LegalityGames {
     LEGAL = "legal",
@@ -11,10 +10,15 @@ export enum LegalityGames {
 export enum LegalityTypes {
     SORCERY = "Sorcery",
     INSTANT = "Instant",
+    LEGENDARYSORCERY = "Legendary Sorcery",
+    SNOWSORCERY = "Snow Sorcery",
     LAND = "Land",
+    SNOWLAND = "Snow Land",
+    LEGENDARYLAND = "Legendary Land",
+    BASICSNOWLAND = "Basic Snow Land",
 }
 
-export function PlayButton() {
+export function Normal() {
 
     const [card, setCard] = useState();
     const [card2, setCard2] = useState();
@@ -22,23 +26,30 @@ export function PlayButton() {
 
 
     const fetch = async () => {
-        
+        setBusy(true);
+
         const response = await api.get("/cards/random",{
             params: {
               q: 'legal:historic',
+
             }
-          })
+        })
 
         const card = response.data
         const types = card.type_line.split(' — ')
 
-        if( types[0] !== LegalityTypes.SORCERY 
-            && types[0] !== LegalityTypes.LAND 
-            && types[0] !== LegalityTypes.INSTANT ) {
-            setCard(card.image_uris.normal)
+        if(    types[0] != LegalityTypes.SORCERY
+            && types[0] != LegalityTypes.INSTANT
+            && types[0] != LegalityTypes.LEGENDARYSORCERY
+            && types[0] != LegalityTypes.SNOWSORCERY
+            && types[0] != LegalityTypes.LAND
+            && types[0] != LegalityTypes.SNOWLAND
+            && types[0] != LegalityTypes.LEGENDARYLAND
+            && types[0] != LegalityTypes.BASICSNOWLAND
+            ){
+            setCard(card.image_uris.normal ?? card.image_uris.png)
             fetch2()
 
-            
             return card
         }
 
@@ -46,21 +57,26 @@ export function PlayButton() {
     }
     
     const fetch2 = async () => {
-        setBusy(true);
 
         const response = await api.get("/cards/random",{
             params: {
               q: 'legal:historic',
             }
-          })
+        })
 
         const card = response.data
         const types = card.type_line.split(' — ')
 
-        if(types[0] !== LegalityTypes.SORCERY 
-            && types[0] !== LegalityTypes.LAND 
-            && types[0] !== LegalityTypes.INSTANT ) {
-            setCard2(card.image_uris.normal)
+        if(    types[0] != LegalityTypes.SORCERY
+            && types[0] != LegalityTypes.INSTANT
+            && types[0] != LegalityTypes.LEGENDARYSORCERY
+            && types[0] != LegalityTypes.SNOWSORCERY
+            && types[0] != LegalityTypes.LAND
+            && types[0] != LegalityTypes.SNOWLAND
+            && types[0] != LegalityTypes.LEGENDARYLAND
+            && types[0] != LegalityTypes.BASICSNOWLAND
+            ){
+            setCard2(card.image_uris.normal ?? card.image_uris.png)
 
             setBusy(false);
             return card
@@ -85,7 +101,7 @@ export function PlayButton() {
             <img id="Second" src={card2} />
             <div>
                 <button type="button" onClick={fetch}>
-                    <img src={ImgButton} />
+                    <img src="src/assets/imgs/button.png" />
                 </button>
             </div> 
         </Container>
