@@ -1,5 +1,43 @@
-*{
+@font-face {
+    font-family: 'Planewalker';
+    src: url('../fonts/Planewalker.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Planewalker';
+    src: url('../fonts/Planewalker Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #832100;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F5901E;
 }
