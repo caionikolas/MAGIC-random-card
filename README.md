@@ -1,7 +1,7 @@
 # MAGIC card randomizer
 
 ### An alternative way to play MTG Arena
-You can access at: https://lucianoasousa.github.io/MAGIC/
+You can access at: [https://caionikolas.github.io/MAGIC-random-card/](https://caionikolas.github.io/MAGIC-random-card/)
 
 ## Game Modes 🎮
 ### Rules 📚
