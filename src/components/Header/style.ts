@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HeaderBar = styled.header`
     position: fixed;
@@ -15,11 +16,17 @@ export const HeaderBar = styled.header`
     border-bottom: 1px solid rgba(174, 172, 172, 0.15);
 `;
 
-export const Logo = styled.span`
+export const Logo = styled(Link)`
     font-family: 'Planewalker', sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
     color: #F5901E;
     letter-spacing: 0.05em;
     user-select: none;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #FFFFFF;
+    }
 `;

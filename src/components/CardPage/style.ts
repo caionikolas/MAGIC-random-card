@@ -9,17 +9,21 @@ export const PageWrapper = styled.div<{ $bg?: string }>`
 `;
 
 export const BackButton = styled.button`
-    background: transparent;
-    border: none;
-    color: #AEACAC;
+    background: rgba(26, 26, 26, 0.75);
+    border: 1px solid rgba(174, 172, 172, 0.3);
+    border-radius: 6px;
+    color: #FFFFFF;
     font-family: system-ui, -apple-system, sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
-    padding: 0.5rem 0;
+    padding: 0.4rem 1rem;
     width: fit-content;
-    transition: color 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    backdrop-filter: blur(4px);
 
     &:hover {
+        background: rgba(245, 144, 30, 0.15);
+        border-color: #F5901E;
         color: #F5901E;
     }
 `;
