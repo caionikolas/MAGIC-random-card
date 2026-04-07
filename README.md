@@ -15,13 +15,14 @@ A game mode to play with your friend, which consists of taking two random cards 
 
 **OBS: If you don't have the drawn card, press again.**
 
+<img src="https://github.com/caionikolas/MAGIC-random-card/blob/main/to%20readme/dashboard.png" >
+
 <br>
 
 * Normal Mode
 
 > * This game mode looks like any non-land permanent in the game.
 > * Play a best-of-three deck in limited mode.
-<img src="https://github.com/caionikolas/MAGIC-random-card/blob/main/to%20readme/dashboard.png" >
 
 <br>
 
@@ -29,8 +30,6 @@ A game mode to play with your friend, which consists of taking two random cards 
 > * This mode will spawn any legendary permanent.
 > * Play a best-of-three deck in limited mode.
 > * You can only have one more legendary card, apart from the ones you've already drawn.
-
-<img src="https://raw.githubusercontent.com/LucianoASousa/MAGIC/main/docs/LegendaryDoc.gif">
 
 
 ## Thanks
