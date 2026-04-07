@@ -21,7 +21,7 @@ A game mode to play with your friend, which consists of taking two random cards 
 
 > * This game mode looks like any non-land permanent in the game.
 > * Play a best-of-three deck in limited mode.
-<img src="https://raw.githubusercontent.com/LucianoASousa/MAGIC/main/docs/NormalDoc.gif">
+<img src="https://github.com/caionikolas/MAGIC-random-card/blob/main/to%20readme/dashboard.png" >
 
 <br>
 
