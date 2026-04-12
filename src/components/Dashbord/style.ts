@@ -43,6 +43,10 @@ export const Panel = styled.a<PanelProps>`
     text-decoration: none;
     gap: 0.75rem;
     padding: 2rem;
+
+    @media (max-width: 480px) {
+        padding: 1rem;
+    }
 `;
 
 interface PanelLabelProps {
@@ -58,6 +62,10 @@ export const PanelLabel = styled.span<PanelLabelProps>`
     transition: color 0.3s ease;
     user-select: none;
     text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 1.6rem;
+    }
 `;
 
 export const PanelSub = styled.span`
@@ -66,4 +74,8 @@ export const PanelSub = styled.span`
     color: #AEACAC;
     letter-spacing: 0.04em;
     user-select: none;
+
+    @media (max-width: 480px) {
+        font-size: 0.75rem;
+    }
 `;

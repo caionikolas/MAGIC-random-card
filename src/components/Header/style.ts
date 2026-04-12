@@ -29,4 +29,8 @@ export const Logo = styled(Link)`
     &:hover {
         color: #FFFFFF;
     }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
 `;

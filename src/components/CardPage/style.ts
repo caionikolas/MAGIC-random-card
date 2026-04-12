@@ -39,6 +39,10 @@ export const ErrorMessage = styled.p`
 export const TopBar = styled.div`
     padding: 0.75rem 2rem;
     margin-top: 56px; /* header height */
+
+    @media (max-width: 480px) {
+        padding: 0.5rem 1rem;
+    }
 `;
 
 export const Content = styled.div`
@@ -48,4 +52,10 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2rem;
+
+    @media (max-width: 480px) {
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 1rem;
+    }
 `;

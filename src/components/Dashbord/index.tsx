@@ -25,6 +25,8 @@ export function Dashboard() {
                     $left={true}
                     onMouseEnter={() => setHovered('legendary')}
                     onMouseLeave={() => setHovered(null)}
+                    onTouchStart={() => setHovered('legendary')}
+                    onTouchEnd={() => setHovered(null)}
                 >
                     <PanelLabel $active={hovered === 'legendary'}>Legendary</PanelLabel>
                     <PanelSub>Click to draw</PanelSub>
@@ -37,6 +39,8 @@ export function Dashboard() {
                     $left={false}
                     onMouseEnter={() => setHovered('normal')}
                     onMouseLeave={() => setHovered(null)}
+                    onTouchStart={() => setHovered('normal')}
+                    onTouchEnd={() => setHovered(null)}
                 >
                     <PanelLabel $active={hovered === 'normal'}>Normal</PanelLabel>
                     <PanelSub>Click to draw</PanelSub>
